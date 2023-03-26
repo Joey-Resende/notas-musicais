@@ -2,20 +2,35 @@ from rich.console import Console
 from rich.table import Table
 from typer import Argument, Typer
 
-from notas_musicais.escalas import escala
+from notas_musicais.acordes import acorde as _acorde
+from notas_musicais.escalas import escala as _escala
 
 console = Console()
 app = Typer()
 
 
 @app.command()
-def escalas(tonica: str =Argument('c'), tonalidade: str =Argument('maior')):
+def escala(tonica: str =Argument('c'), tonalidade: str =Argument('maior')):
     table = Table()
-    notas, graus = escala(tonica, tonalidade).values()
+    notas, graus = _escala(tonica, tonalidade).values()
 
     for grau in graus:
         table.add_column(grau)
 
     table.add_row(*notas)
+    console.print(table)
+
+
+@app.command()
+def acorde(cifra: str = Argument('C', help='Cifra de um acorde')):
+    table = Table()
+
+    notas, graus = _acorde(cifra).values()
+
+    for grau in graus:
+        table.add_column(grau)
+
+    table.add_row(*notas)
+
     console.print(table)
 
