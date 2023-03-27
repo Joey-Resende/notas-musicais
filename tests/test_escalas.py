@@ -46,13 +46,12 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_nao_existe():
         ('C#', 'maior', ['C#', 'D#', 'F', 'F#', 'G#', 'A#', 'C']),
         ('F', 'maior', ['F', 'G', 'A', 'A#', 'C', 'D', 'E']),
         ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
-        ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'C']),
+        ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
         ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
     ],
 )
 def test_deve_retornar_as_notas_corrretas(tonica, tonalidade, esperado):
     resultado = escala(tonica, tonalidade)
-
     assert resultado['notas'] == esperado
 
 
