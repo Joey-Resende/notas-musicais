@@ -51,4 +51,3 @@ def test_campo_harmonico_cli_deve_conter_todos_os_graus(grau):
 def test_campo_harmonico_cli_deve_conter_todas_as_cifras(cifra):
     result = runner.invoke(app, ['campo-harmonico', 'C'])
     assert cifra in result.stdout
-

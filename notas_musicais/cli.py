@@ -11,19 +11,26 @@ app = Typer()
 
 
 @app.command()
-def escala(tonica: str =Argument('c'), tonalidade: str =Argument('maior')):
+def escala(
+    tonica: str = Argument('c', help='Tônica da escala'),
+    tonalidade: str = Argument('maior', help='Tonalidade da escala'),
+):
     table = Table()
+
     notas, graus = _escala(tonica, tonalidade).values()
 
     for grau in graus:
         table.add_column(grau)
 
     table.add_row(*notas)
+
     console.print(table)
 
 
 @app.command()
-def acorde(cifra: str = Argument('C', help='Cifra de um acorde')):
+def acorde(
+    cifra: str = Argument('C', help='Cifra de um acorde'),
+):
     table = Table()
 
     notas, graus = _acorde(cifra).values()
@@ -51,4 +58,3 @@ def campo_harmonico(
     table.add_row(*acordes)
 
     console.print(table)
-

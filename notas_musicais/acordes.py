@@ -8,17 +8,17 @@ from notas_musicais.escalas import NOTAS, escala
 
 def _menor(cifra):
     nota, _ = cifra.split('m')
-    
+
     if '+' in cifra:
         tonica, terca, quinta = triade(nota, 'menor')
         notas = [tonica, terca, semitom(quinta, intervalo=1)]
         graus = ['I', 'III-', 'V+']
-    
+
     else:
         notas = triade(nota, 'menor')
         graus = ['I', 'III-', 'V']
 
-    return notas, graus 
+    return notas, graus
 
 
 def semitom(nota: str, *, intervalo: int) -> str:
@@ -40,11 +40,11 @@ def semitom(nota: str, *, intervalo: int) -> str:
         'B'
     """
     pos = NOTAS.index(nota.upper()) + intervalo
-    
+
     return NOTAS[pos % 12]
 
 
-def triade(nota: str, tonalidade:str ) -> list[str]:
+def triade(nota, tonalidade) -> list[str]:
     """
     Gera triades a partir de uma tônica e uma tonalidade.
 
@@ -64,19 +64,19 @@ def triade(nota: str, tonalidade:str ) -> list[str]:
     """
     graus = (0, 2, 4)
     notas_da_escala, _ = escala(nota, tonalidade).values()
-    
+
     return [notas_da_escala[grau] for grau in graus]
 
 
 def acorde(cifra: str) -> dict[str, list[str]]:
     """
     Gera as notas de um acorde partindo de uma cifra.
-    
+
     Parameters:
-        cifra: Um acorde em forma de cifra
-        
+        cifra: Um acorde em forma de cifra.
+
     Returns:
-        Um dicionário com as notas e os graus correspondentes a escala maior.
+        Um dicionário com as notas e os graus correpondes a escala maior.
 
     Examples:
         >>> acorde('C')
@@ -96,7 +96,7 @@ def acorde(cifra: str) -> dict[str, list[str]]:
     """
     if 'm' in cifra:
         notas, graus = _menor(cifra)
-   
+
     elif '°' in cifra:
         nota, _ = cifra.split('°')
         tonica, terca, quinta = triade(nota, 'menor')
@@ -108,10 +108,9 @@ def acorde(cifra: str) -> dict[str, list[str]]:
         tonica, terca, quinta = triade(nota, 'maior')
         notas = [tonica, terca, semitom(quinta, intervalo=+1)]
         graus = ['I', 'III', 'V+']
-    
+
     else:
         notas = triade(cifra, 'maior')
         graus = ['I', 'III', 'V']
 
     return {'notas': notas, 'graus': graus}
-
