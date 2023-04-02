@@ -1,7 +1,7 @@
 """
 Módulo de acordes.
 
-O Módulo de acordes conta com funções e ferramentas necessárias para a geração de acordes.
+O módulo de acordes conta com funções e ferramentas necessárias para a geração de acordes.
 """
 from notas_musicais.escalas import NOTAS, escala
 
