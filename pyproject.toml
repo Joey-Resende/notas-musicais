@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "notas-musicais"
 version = "0.1.0"
-description = ""
+description = "Notas musicais é um CLI para ajudar na formação de escalas, acordes e campos harmônicos"
 authors = ["Joey-Resende <givanildo.resende@gmail.com>"]
 readme = "README.md"
 packages = [{include = "notas_musicais"}]
@@ -27,6 +27,8 @@ taskipy = "^1.10.3"
 mkdocs-material = "^9.1.1"
 mkdocstrings = "^0.20.0"
 mkdocstrings-python = "^0.8.3"
+mkdocs-macros-plugin = "^0.7.0"
+Jinja2 = "^3.1.2"
 
 [build-system]
 requires = ["poetry-core"]
