@@ -1,4 +1,4 @@
-![logo do projeto](https://github.com/Joey-Resende/notas-musicais/blob/main/docs/assets/logo.png)
+![logo do projeto](https://github.com/Joey-Resende/notas-musicais/blob/main/docs/assets/logo-small.png)
 
 # Notas musicais
 
