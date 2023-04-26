@@ -1,4 +1,4 @@
-![logo do projeto](assets/logo.png){ width="300" .center }
+![logo do projeto](https://github.com/Joey-Resende/notas-musicais/blob/main/docs/assets/logo.png)
 
 # Notas musicais
 
@@ -15,7 +15,7 @@ Toda a aplicação e baseada em um comando chamado `notas-musicais`. Esse comand
 Você pode chamar as escalas via linha de comando. Por exemplo:
 
 ```bash
-{{ commands.run }} escala
+   notas-musicais escala
 ```
 
 Retornando os graus e as notas correspondentes a essa escala:
@@ -33,7 +33,7 @@ Retornando os graus e as notas correspondentes a essa escala:
 O primeiro parâmetro do CLI é a tônica da escala que deseja exibir. Desta forma você pode alterar a escala retornada. Por exemplo a escala de 'F#': 
 
 ```bash
-{{ commands.run }} escala F#
+   notas-musicais escala F#
 ```
 
 Resultando em:
@@ -51,7 +51,7 @@ Resultando em:
 Você pode alterar a tonalidade da escala também! Esse é o segundo parâmetro da linha de comando. Por exemplo: a escala de 'D#' maior:
 
 ```bash
-{{ commands.run }} escala D# menor
+   notas-musicais escala D# menor
 ```
 
 ```
@@ -67,7 +67,7 @@ Você pode alterar a tonalidade da escala também! Esse é o segundo parâmetro 
 Uso básico
 
 ```bash
- {{ commands.run }} acorde 
+   notas-musicais acorde 
 ```
 
 ```
@@ -81,7 +81,7 @@ Uso básico
 ### Variações na cifra
 
 ```bash
-{{ commands.run }} acorde C+
+   notas-musicais acorde C+
 ```
 
 ```bash
@@ -99,7 +99,7 @@ Até o momento você pode usar acordes maiores, menores, diminuto e aumentados
 Você pode chamar os campos hamônicos via o subcomando `campo-harmonico`. Por exemplo:
 
 ```bash
-{{ commands.run }} campo-harmonico
+   notas-musicais campo-harmonico
 ```
 
 ```bash
@@ -117,7 +117,7 @@ Por padrão os parâmetros utilizados são a tônica de `C` e o campo harmônico
 Você pode alterar os parâmetros da tônica e da tonalidade.
 
 ```bash
-{{ commands.run }} campo-harmonico [TONICA] [TONALIDADE]
+   notas-musicais campo-harmonico [TONICA] [TONALIDADE]
 ```
 
 #### Alteração na tônica do campo
@@ -125,7 +125,7 @@ Você pode alterar os parâmetros da tônica e da tonalidade.
 Um exemplo com o campo harmônico de `E`:
 
 ```bash
-{{ commands.run }} campo-harmonico E
+   notas-musicais campo-harmonico E
 ```
 
 ```bash
@@ -153,7 +153,7 @@ Um exemplo utilizando o campo harmônico de `E` na tonalidade `menor`:
 Para descobrir outras opções, você pode usar a flag `--help`:
 
 ```bash
-{{ commands.run }} --help
+   notas-musicais --help
 ```
 
 ```bash
@@ -173,7 +173,7 @@ Usage: notas-musicais [OPTIONS] COMMAND [ARGS]...
 As informações sobre os subcomandos podem ser podem ser acessadas usando a flag `--help` após o nome do parâmetro. Um exemplo do uso do `help` nos campos harmônicos:
 
 ```bash
-{{ commands.run }} campo-harmonico --help
+   notas-musicais campo-harmonico --help
 ```
 
 ```bash
